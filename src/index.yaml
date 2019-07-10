@@ -1,0 +1,7 @@
+ProjectTitle: Project name
+
+PageList:
+  - file: page-index.html
+    ready: 100
+  - file: ui.html
+    ready: 100

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Интерфейс</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!-- favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+
+  <body>
+    <div id="root">
+      <header class="header">
+        <div class="container"></div>
+      </header>
+      <main role="main">
+        <article>
+          <div class="ui">
+            <!-- header-->
+            <div class="ui__header">
+              <div class="row">
+                <div class="col">
+                  <div id="nav-icon"><span></span><span></span><span></span><span></span></div>
+                </div>
+                <div class="col">
+                  <h1>Boiler UI</h1>
+                </div>
+              </div>
+            </div>
+            <section class="section">
+              <div class="container">
+                <!-- Fields   -->
+                <div class="title-module">
+                  <h3 class="title-module__title">Fields</h3>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p class="section__ui-desc">.field</p><input class="field" type="text" placeholder="Введите..." />
+                  </div>
+                  <div class="col">
+                    <p class="section__ui-desc">--error</p><input class="field field--error" type="text" placeholder="Введите..." />
+                  </div>
+                  <div class="col">
+                    <p class="section__ui-desc">--disabled</p><input class="field field--disabled" type="text" placeholder="Введите..." />
+                  </div>
+                  <div class="col">
+                    <p class="section__ui-desc">+attach()</p><label class="attach js-attach"><input type="file" /><span class="attach__btn btn btn--line-gray btn--icon-right"><span>Прикрепить файл</span><svg class="icon icon-clip ">
+                          <use xlink:href="img/sprite.svg#clip"></use>
+                        </svg></span></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p class="section__ui-desc">+datepicker()</p><label class="datepicker-module"><input class="js-datepicker" type="text" placeholder="Фильтр по дате" /></label>
+                  </div>
+                  <div class="col">
+                    <p class="section__ui-desc">+select()</p>
+                    <div class="select"><select class="js-select">
+                        <option>Отдел кадров</option>
+                        <option>Пресс-центр</option>
+                        <option>Партнерам</option>
+                        <option>Инвесторам</option>
+                      </select></div>
+                  </div>
+                  <div class="col"></div>
+                  <div class="col"></div>
+                </div>
+              </div>
+            </section>
+            <section class="section section--gray">
+              <div class="container">
+                <!-- Buttons-->
+                <div class="title-module">
+                  <h3 class="title-module__title">Buttons / Links</h3>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p class="section__ui-desc">+button()</p><button class="btn btn--blue btn--icon-right"> <span>Написать</span><svg class="icon icon-arrow-right ">
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                      </svg></button>
+                  </div>
+                  <div class="col">
+                    <p class="section__ui-desc">+up()</p><button class="up js-up"><span class="up__name">наверх</span>
+                      <div class="up__icon"><svg class="icon icon-arrow-up ">
+                          <use xlink:href="img/sprite.svg#arrow-up"></use>
+                        </svg></div>
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                  <div class="col"></div>
+                </div>
+              </div>
+            </section>
+            <section class="section">
+              <div class="container">
+                <!-- Checkbox / Radio -->
+                <div class="title-module">
+                  <h3 class="title-module__title">Checkbox / Radio </h3>
+                </div>
+                <div class="row">
+                  <div class="col"><label class="checkbox"><input class="checkbox__input" type="checkbox" checked="checked" /><span><span class="checkbox__icon"><svg class="icon icon-check ">
+                            <use xlink:href="img/sprite.svg#check"></use>
+                          </svg></span><span class="checkbox__content">Я согласен на обработку персональных данных, а также с <a href="#" target="_blank">условиями подписки</a></span></span></label></div>
+                </div>
+              </div>
+            </section>
+            <section class="section section--gray">
+              <div class="container">
+                <!-- Social-->
+                <div class="title-module">
+                  <h3 class="title-module__title">Social</h3>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="social-module">
+                      <ul class="social-module__list">
+                        <li><a href="https://www.instagram.com/danycom.ru/" target="_blank"><svg class="icon icon-instagram ">
+                              <use xlink:href="img/sprite.svg#instagram"></use>
+                            </svg></a></li>
+                        <li><a href="https://vk.com/danycom" target="_blank"><svg class="icon icon-vk ">
+                              <use xlink:href="img/sprite.svg#vk"></use>
+                            </svg></a></li>
+                        <li><a href="https://www.facebook.com/danycomru/" target="_blank"><svg class="icon icon-facebook ">
+                              <use xlink:href="img/sprite.svg#facebook"></use>
+                            </svg></a></li>
+                        <li><a href="https://ok.ru/danycom" target="_blank"><svg class="icon icon-odn ">
+                              <use xlink:href="img/sprite.svg#odn"></use>
+                            </svg></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="section">
+              <div class="container">
+                <!-- Pagination-->
+                <div class="title-module">
+                  <h3 class="title-module__title">Pagination</h3>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="pagination js-pagination"><button class="btn btn--line-gray btn--icon-left"> <svg class="icon icon-arrow-left ">
+                          <use xlink:href="img/sprite.svg#arrow-left"></use>
+                        </svg><span>Предыдущая</span></button>
+                      <div class="pagination__numbers">
+                        <div class="pagination__first"><a href="#">1</a><a href="#">2</a><a href="#">3</a><a class="active" href="#">4</a><a href="#">5</a></div><span>...</span>
+                        <div class="pagination__last"><a href="#">10</a><a href="#">11</a><a href="#">12</a><a href="#">13</a></div>
+                      </div><button class="btn btn--line-gray btn--icon-right"> <span>Следующая</span><svg class="icon icon-arrow-right ">
+                          <use xlink:href="img/sprite.svg#arrow-right"></use>
+                        </svg></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="section section--gray">
+              <div class="container">
+                <!-- Files-->
+                <div class="title-module">
+                  <h3 class="title-module__title">Files</h3>
+                </div>
+                <div class="row">
+                  <div class="col"><a class="file" href="" download="Логотипы компании"><span class="file__icon"><img src="img/icons/png/pdf.png" alt="" /></span><span class="file__content"> <span class="file__info">ZIP, 256.21 КБ</span><span class="file__title">Логотипы компании</span></span></a></div>
+                  <div class="col"><a class="file" href="" download="Логотипы"><span class="file__icon"><img src="img/icons/png/doc.png" alt="" /></span><span class="file__content"> <span class="file__info">ZIP, 256.21 КБ</span><span class="file__title">Логотипы</span></span></a></div>
+                  <div class="col"><a class="file" href="" download="Логотипы"><span class="file__icon"><img src="img/icons/png/doc.png" alt="" /></span><span class="file__content"> <span class="file__info">ZIP, 256.21 КБ</span><span class="file__title">Логотипы</span></span></a></div>
+                </div>
+                <!---->
+              </div>
+            </section>
+            <section class="section">
+              <div class="container">
+                <!-- title module-->
+                <div class="title-module">
+                  <h3 class="title-module__title">Text</h3>
+                </div><!-- text-->
+                <div class="typography">
+                  <h1>Heading H1</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum harum nostrum sed laudantium maxime sunt, animi mollitia officiis dicta! Nemo facilis amet iste ipsum unde. Consequatur quasi perspiciatis ea fuga.</p>
+                  <h2>Heading H2</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla in facere, dicta porro labore magnam ipsa adipisci ipsum reprehenderit rerum? Ullam nobis nostrum amet, quo unde earum ab aperiam dignissimos.</p>
+                  <h3>Heading H3</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam provident praesentium ex a eaque totam. Animi amet dolor iusto repellat debitis quos quam earum, unde iste aliquam perferendis hic accusantium.</p>
+                  <h4>Heading H4</h4>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque asperiores aspernatur aperiam consequatur pariatur soluta, illo laboriosam porro commodi ut quis saepe sint reiciendis! Expedita pariatur autem molestias eveniet quam.</p>
+                  <h5>Heading H5</h5>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsum dolore, at eveniet, pariatur voluptatibus exercitationem excepturi velit esse aut reiciendis omnis, obcaecati fugit. Eum esse consectetur omnis adipisci amet!</p>
+                  <h6>Heading H6</h6>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum laudantium eaque optio! Praesentium est eveniet minus perferendis, ipsa qui? Possimus debitis impedit ratione beatae perspiciatis voluptatibus facilis quia maiores a.</p>
+                  <ul>
+                    <li>Hello list</li>
+                    <li>Hello list</li>
+                    <li>Hello list</li>
+                    <li>Hello list</li>
+                    <li>Hello list</li>
+                  </ul>
+                  <ol>
+                    <li>Hello list</li>
+                    <li>Hello list</li>
+                    <li>Hello list</li>
+                    <li>Hello list</li>
+                    <li>Hello list</li>
+                  </ol>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+      </main>
+      <footer class="footer"></footer><!-- modal - feedback-->
+      <div class="modal" id="feedback-window">
+        <div class="modal__block">
+          <div class="modal__top">
+            <h3 class="modal__title">Форма обратной связи</h3><button class="modal__close js-hide-modal"><svg class="icon icon-cross ">
+                <use xlink:href="img/sprite.svg#cross"></use>
+              </svg></button>
+          </div>
+          <div class="modal__content"></div>
+        </div>
+      </div>
+      <script src="js/app.js"></script>
+    </div>
+  </body>
+
+</html>

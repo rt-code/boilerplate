@@ -1,0 +1,60 @@
+@mixin h-six() {
+    font-style: normal;
+    font-weight: normal;
+    line-height: em(21px, 12px);
+    font-family: $accent-font;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+@mixin h-five() {
+    font-style: normal;
+    font-weight: normal;
+    font-family: $accent-font;
+    line-height: em(43px, 24px);
+    font-size: 24px;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 24px * $lg-cf;
+    }
+
+    @include media-breakpoint-down(xs) {
+        font-size: 24px * $xs-cf;
+    }
+}
+
+@mixin h-four() {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 20px;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 20px * $lg-cf;
+    }
+}
+
+@mixin h-three() {
+    line-height: $gutter-default;
+    font-size: em(24px, $fz);
+}
+
+@mixin h-two() {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 54px;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 54px * $lg-cf;
+    }
+
+    @include media-breakpoint-down(xs) {
+        font-size: 54px * $xs-cf;
+    }
+}
+
+@mixin h-one() {
+    line-height: 1.3;
+    font-size: em(65px, $fz);
+}

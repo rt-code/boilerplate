@@ -1,0 +1,25 @@
+@mixin p-normal() {
+    line-height: em(25px, $fz);
+    font-weight: 400;
+
+    @include media-breakpoint-down(lg) {
+        font-size: $fz * 0.9;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: $fz * 0.85;
+    }
+}
+
+@mixin p-small() {
+    font-size: 14px;
+    line-height: em(24px, 14px);
+
+    @include media-breakpoint-down(lg) {
+        font-size: 13px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 12px;
+    }
+}

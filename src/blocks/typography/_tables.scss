@@ -1,0 +1,47 @@
+@mixin tableStyle {
+    .table-wrap {
+        margin-bottom: 40px;
+        overflow: auto;
+        width: 100%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &__dark-cell {
+            background: #45537d;
+        }
+    }
+
+    table {
+        width: 100%;
+
+        td,
+        th {
+            font-weight: 400;
+            border: solid 1px $gray-light;
+            padding: 10px;
+            vertical-align: middle;
+        }
+
+        &.large {
+            td {
+                padding: 25px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        table {
+            &.large {
+                td {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+
+}
+
+@include tableStyle();

@@ -1,0 +1,47 @@
+.file {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $primary;
+    max-width: 820px;
+
+    &__icon {
+        margin-right: 30px;
+        flex-shrink: 0;
+    }
+
+    &__info {
+        display: block;
+        margin-bottom: 5px;
+        color: #83838d;
+        font-size: 12px;
+    }
+
+    &__title {
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    &:hover {
+        color: $blue;
+
+        .file {
+            &__title {
+                color: $blue;
+                border-bottom: 1px solid $blue;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        &__title {
+            font-size: 20px;
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        &__title {
+            font-size: 16px;
+        }
+    }
+}

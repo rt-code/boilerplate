@@ -1,0 +1,66 @@
+- var svgSprite = 'img/sprite.svg'
+
+include ../partials/_social
+
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href=svgSprite + "#" + name)
+
+
+
+mixin attach(itemClass)
+	+b.LABEL.attach.js-attach
+		+e.INPUT(type="file")
+		+e.SPAN.btn(class=itemClass)
+			span Прикрепить файл
+			+icon('clip')
+
+
+mixin datepicker(itemClass, itemPlaceholder)
+	+b.LABEL.datepicker-module
+		+e.INPUT(type="text", class=itemClass, placeholder=itemPlaceholder).js-datepicker
+
+
+mixin select(itemClass)
+	+b.select(class=itemClass)
+		+e.SELECT(class=" js-select")
+			if block
+				block
+
+
+mixin button(itemText, itemClass, itemIcon)
+	+b.BUTTON.btn(class=itemClass) 
+		span #{itemText}
+		if itemIcon
+			+icon(itemIcon)
+
+
+mixin checkbox(itemChecked)
+	+b.LABEL.checkbox
+		+e.INPUT.input(type="checkbox", checked=itemChecked)
+		span
+			+e.icon
+				+icon('check')
+			+e.content
+				if block
+					block
+
+
+mixin file(itemFormat, itemName, itemSize, itemHref)
+	+b.A(href=itemHref, download=itemName).file
+		+e.icon
+				if itemFormat == "pdf"
+					img(src="img/icons/png/pdf.png", alt="")
+				if itemFormat == "doc"
+					img(src="img/icons/png/doc.png", alt="")
+		+e.content 
+				+e.info #{itemSize}
+				+e.title #{itemName}
+
+
+mixin up()
+	+b.BUTTON.up.js-up
+		+e.SPAN.name наверх
+		+e.icon
+			+icon('arrow-up')

@@ -1,0 +1,70 @@
+// кнопка
+.btn {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.813rem;
+  font-family: $main-font;
+  font-weight: 500;
+  transition: all 0.05s ease;
+  padding: 0 3em;
+  height: 50px;
+  line-height: 50px;
+  white-space: nowrap;
+  letter-spacing: 0.033rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+
+  &--icon-right {
+    display: inline-flex;
+    align-items: center;
+    padding-right: 1.5em;
+
+    svg {
+      margin-left: 20px;
+      fill: $white;
+    }
+
+    img {
+      margin-left: 20px;
+      display: block;
+    }
+  }
+
+  &--icon-left {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 1.5em;
+
+    svg {
+      margin-right: 20px;
+      fill: $white;
+    }
+
+    img {
+      margin-right: 20px;
+      display: block;
+    }
+  }
+
+  &--blue {
+    background: $blue;
+    color: $white;
+
+    &:hover {
+      background: $blue-darken;
+    }
+  }
+
+  &--disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &--full {
+    width: 100%;
+  }
+}

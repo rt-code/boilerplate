@@ -1,0 +1,20 @@
+include ../_assets/bemto/bemto
+- set_bemto_settings({ modifier: "--" })
+include ./_mixins
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    include _head
+  +b.BODY(class=pageClass)
+    #root
+      include ../partials/_header
+      +b.MAIN
+        +b.ARTICLE(class=articleClass)
+          block content
+      include ../partials/_footer
+      include ../windows/_windows
+      script(src='js/app.js')
+
+        

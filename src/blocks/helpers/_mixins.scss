@@ -1,0 +1,104 @@
+// width
+@mixin r($width) {
+    @media only screen and (max-width: $width+ "px") {
+        @content;
+    }
+}
+
+
+@mixin r($width) {
+    @media only screen and (min-width: $width+ "px") {
+        @content;
+    }
+}
+
+// height
+@mixin rh($height) {
+    @media only screen and (max-height: $height + "px") {
+        @content;
+    }
+}
+
+@mixin rh($height) {
+    @media only screen and (min-height: $height + "px") {
+        @content;
+    }
+}
+
+//simple gradient
+@mixin g($color1, $color2) {
+    background-image: linear-gradient($color1, $color2);
+}
+
+@mixin gh($color1, $color2) {
+    background-image: linear-gradient(left, $color1, $color2);
+}
+
+
+// font-family 
+@mixin font($alias, $name) {
+    @font-face {
+        font-family: $alias;
+        src: url("../fonts/"+ $name + ".woff2") format("woff2"), url("../fonts/"+ $name + ".woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+// filter
+@mixin blur($var) {
+    filter: blur($var);
+}
+
+// vertical-align at center
+@mixin vcenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin hcenter {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+
+@mixin offAnimate() {
+    transform: none;
+    opacity: 1;
+}
+
+
+// псевдоэлемент @include pseudo;
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+  }
+  
+  // соотношение @include responsive-ratio(16,9);
+  @mixin responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+     &:before {
+      @include pseudo($pos: relative);
+      width: 100%;
+      padding-top: $padding;
+     }
+    } @else {
+     padding-top: $padding;
+    }
+  }
+  
+  // усечение текста @include truncate(100%);
+  @mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  
+  

@@ -1,0 +1,42 @@
+// Grid breakpoints
+
+$grid-breakpoints: (xs: 0,
+sm: 768px,
+md: 1024px,
+lg: 1200px,
+xl: 1366px,
+xxl: 1630px) !default;
+
+
+
+$container-max-widths: (xs: 530px,
+sm: 730px,
+md: 960px,
+lg: 1130px,
+xl: 1230px,
+xxl: 1570px) !default;
+
+
+$grid-columns: 8 !default;
+$grid-gutter-width: 30px !default;
+
+
+// Bootstrap file imports
+// @import "../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../node_modules/bootstrap/scss/bootstrap-grid";
+// @import "../../node_modules/bootstrap/scss/utilities/sizing";
+// @import "../../node_modules/bootstrap/scss/utilities/spacing";
+// @import "../../node_modules/bootstrap/scss/mixins/visibility";
+// @import "../../node_modules/bootstrap/scss/utilities/visibility";
+
+// .row {
+//     &--nogutter {
+//         margin-right: 0;
+//         margin-left: 0;
+
+//         >[class*="col-"] {
+//             padding-right: 0;
+//             padding-left: 0;
+//         }
+//     }
+// }
