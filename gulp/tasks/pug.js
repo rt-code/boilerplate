@@ -1,25 +1,18 @@
-var gulp = require('gulp'),
-  pug = require('gulp-pug'),
-  changed = require('gulp-changed'),
-  gulpif = require('gulp-if'),
-  frontMatter = require('gulp-front-matter'),
-  plumber = require('gulp-plumber'),
-  prettify = require('gulp-prettify'),
-  config = require('../config');
+import gulp from 'gulp';
+import pug from 'gulp-pug';
+import plumber from 'gulp-plumber'
+import changed from 'gulp-changed';
+import gulpif from 'gulp-if';
+import frontMatter from 'gulp-front-matter';
+import prettify from 'gulp-prettify';
+import config from '../config';
 
-//pug compile
-function renderHtml(onlyChanged) {
+const renderHtml = (onlyChanged) => {
   return gulp
     .src([config.src.templates + '/[^_]*.pug'])
-    .pipe(plumber({
-      errorHandler: config.errorHandler
-    }))
-    .pipe(gulpif(onlyChanged, changed(config.dest.html, {
-      extension: '.html'
-    })))
-    .pipe(frontMatter({
-      property: 'data'
-    }))
+    .pipe(plumber({ errorHandler: config.errorHandler }))
+    .pipe(gulpif(onlyChanged, changed(config.dest.html, { extension: '.html' })))
+    .pipe(frontMatter({ property: 'data' }))
     .pipe(pug())
     .pipe(prettify({
       indent_size: 2,
@@ -31,15 +24,23 @@ function renderHtml(onlyChanged) {
     .pipe(gulp.dest(config.dest.html));
 }
 
-gulp.task('pug', function () {
-  return renderHtml();
-});
-gulp.task('pug:changed', function () {
-  return renderHtml(true);
-});
+gulp.task('pug', () => renderHtml());
+gulp.task('pug:changed', () => renderHtml(true));
+
+const build = gulp => gulp.parallel('pug');
+const watch = gulp => {
+  return function() {
+    gulp.watch([
+      config.src.templates + '/**/[^_]*.pug'
+    ], gulp.parallel('pug:changed'));
+
+    gulp.watch([
+      config.src.templates + '/**/_*.pug'
+    ], gulp.parallel('pug'));
+  }
+};
 
 
-gulp.task('pug:watch', function () {
-  gulp.watch([config.src.templates + '/**/_*.pug'], ['pug']);
-  gulp.watch([config.src.templates + '/**/[^_]*.pug'], ['pug:changed']);
-});
+
+module.exports.build = build;
+module.exports.watch = watch;
