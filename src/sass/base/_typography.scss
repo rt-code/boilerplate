@@ -1,0 +1,170 @@
+$lg-cf: 0.8;
+$xs-cf: 0.65;
+
+@mixin h-six() {
+    font-style: normal;
+    font-weight: normal;
+    line-height: em(21px, 12px);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+@mixin h-five() {
+    font-style: normal;
+    font-weight: normal;
+    line-height: em(43px, 24px);
+    font-size: 24px;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 24px * $lg-cf;
+    }
+
+    @include media-breakpoint-down(xs) {
+        font-size: 24px * $xs-cf;
+    }
+}
+
+@mixin h-four() {
+    font-style: normal;
+    font-weight: 500;
+    line-height: em(36px, 24px);
+    font-size: 24px;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 24px * $lg-cf;
+    }
+
+}
+
+@mixin h-three() {
+    font-style: normal;
+    font-weight: 500;
+    line-height: em(49px, 30px);
+    font-size: 30px;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 30px * $lg-cf;
+    }
+
+    @include media-breakpoint-down(xs) {
+        font-size: 30px * $xs-cf;
+    }
+}
+
+@mixin h-two() {
+    font-style: normal;
+    font-weight: 500;
+    line-height: em(72px, 54px);
+    font-size: 54px;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 54px * $lg-cf;
+    }
+
+    @include media-breakpoint-down(xs) {
+        font-size: 54px * $xs-cf;
+    }
+}
+
+@mixin h-one() {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: em(85px, 64px);
+
+    @include media-breakpoint-down(lg) {
+        font-size: 64px * $lg-cf;
+    }
+
+    @include media-breakpoint-down(xs) {
+        font-size: 64px * $xs-cf;
+    }
+}
+
+@mixin p-normal() {
+    line-height: em(32px, $fz);
+    font-size: $fz;
+
+    @include media-breakpoint-down(lg) {
+        font-size: $fz * 0.9;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: $fz * 0.85;
+    }
+}
+
+@mixin p-small() {
+    font-size: 16px;
+    line-height: em(24px, 14px);
+
+    @include media-breakpoint-down(lg) {
+        font-size: 16px * 0.9;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 16px * 0.85;
+    }
+}
+
+// стилизация текста
+.text {
+    @include p-normal();
+    color: $primary;
+
+    @include media-breakpoint-down(lg) {
+        font-size: $fz * 0.9;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: $fz * 0.85;
+    }
+
+    strong,
+    b {
+        font-weight: bold;
+    }
+
+    h1 {
+        @include h-one();
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        @include h-two();
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        @include h-three();
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        @include h-four();
+        margin-bottom: 20px;
+    }
+
+    h5 {
+        @include h-five();
+        margin-bottom: 15px;
+    }
+
+    h6 {
+        @include h-six();
+        margin-bottom: 15px;
+    }
+
+
+    p {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    small {
+        @include p-small();
+    }
+
+}
